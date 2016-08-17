@@ -1,0 +1,8 @@
+prefix=/home/manuel/catkin_ws/devel
+
+Name: holoruch_dynamixel
+Description: Description of holoruch_dynamixel
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/manuel/catkin_ws/devel/lib 
+Requires: 

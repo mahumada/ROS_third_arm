@@ -1,0 +1,8 @@
+prefix=/home/manuel/catkin_ws/install
+
+Name: testgazebo_controller
+Description: Description of testgazebo_controller
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/manuel/catkin_ws/install/lib 
+Requires: 

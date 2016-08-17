@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: TestGazebo
+    relative_path: urdf/TestGazebo.urdf.xacro
+  SRDF:
+    relative_path: config/testgazebo.srdf
+  CONFIG:
+    generated_timestamp: 1471288803

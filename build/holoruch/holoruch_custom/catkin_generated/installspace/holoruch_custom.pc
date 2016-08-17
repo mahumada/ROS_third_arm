@@ -1,0 +1,8 @@
+prefix=/home/manuel/catkin_ws/install
+
+Name: holoruch_custom
+Description: Description of holoruch_custom
+Version: 0.0.0
+Cflags: -I/home/manuel/catkin_ws/install/include
+Libs: -L/home/manuel/catkin_ws/install/lib 
+Requires: 

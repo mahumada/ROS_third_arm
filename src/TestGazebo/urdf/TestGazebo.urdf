@@ -1,0 +1,184 @@
+<robot
+  name="TestGazebo">
+
+  <link name="world"/>
+
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="M64"/>
+  </joint>
+
+  <link
+    name="M64">
+    <inertial>
+      <origin
+        xyz="0 0.00036546 0.03152"
+        rpy="0 0 0" />
+      <mass
+        value="0.0001194" />
+      <inertia
+        ixx="5.7572E-08"
+        ixy="4.9537E-24"
+        ixz="-2.1309E-24"
+        iyy="5.474E-08"
+        iyz="-7.6125E-10"
+        izz="3.4629E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestGazebo/meshes/M64.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 0.1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestGazebo/meshes/M64_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="A12">
+    <inertial>
+      <origin
+        xyz="-0.00042674 -0.00015143 0.0254"
+        rpy="0 0 0" />
+      <mass
+        value="6.9873E-05" />
+      <inertia
+        ixx="2.3199E-08"
+        ixy="-6.6291E-10"
+        ixz="1.1553E-23"
+        iyy="2.1566E-08"
+        iyz="-3.1637E-23"
+        izz="1.4713E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestGazebo/meshes/A12.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.84314 0.84314 0.84314 0.1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestGazebo/meshes/A12_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R1"
+    type="continuous">
+    <origin
+      xyz="0 -0.028 0.0481"
+      rpy="1.5708 0 0" />
+    <parent
+      link="M64" />
+    <child
+      link="A12" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics damping="0.00000001" />
+
+  </joint>
+  <link
+    name="Frame">
+    <inertial>
+      <origin
+        xyz="0.010668 0.015372 0.021681"
+        rpy="0 0 0" />
+      <mass
+        value="1.5563E-05" />
+      <inertia
+        ixx="6.1558E-09"
+        ixy="1.4193E-10"
+        ixz="1.3063E-09"
+        iyy="5.8209E-09"
+        iyz="-5.0367E-11"
+        izz="2.9381E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestGazebo/meshes/Frame.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 0.1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TestGazebo/meshes/Frame_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R2"
+    type="continuous">
+    <origin
+      xyz="-0.0080263 0.022618 0.0385"
+      rpy="1.5708 0 0" />
+    <parent
+      link="A12" />
+    <child
+      link="Frame" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics damping="0.00000001" />
+  </joint>
+
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="R1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="M64">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="R2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="A12">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+</robot>

@@ -1,0 +1,8 @@
+prefix=/home/manuel/catkin_ws/install
+
+Name: dynamixel_control_hw
+Description: Description of dynamixel_control_hw
+Version: 0.0.1
+Cflags: 
+Libs: -L/home/manuel/catkin_ws/install/lib 
+Requires: roscpp std_msgs message_runtime

@@ -1,0 +1,8 @@
+prefix=/home/manuel/catkin_ws/devel
+
+Name: holoruch_pantilt
+Description: Description of holoruch_pantilt
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/manuel/catkin_ws/devel/lib 
+Requires: 

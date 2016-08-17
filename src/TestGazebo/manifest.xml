@@ -1,0 +1,6 @@
+<package>
+  <description brief="TestGazebo_collision_col2">TestGazebo_collision_col2</description>
+  <depend package="gazebo" />
+  <author>me</author>
+  <license>BSD</license>
+</package>
